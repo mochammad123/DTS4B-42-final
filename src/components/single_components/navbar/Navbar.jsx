@@ -67,6 +67,7 @@ function Navbar(props) {
       // vertical padding + font size from searchIcon
       paddingLeft: `calc(1em + ${theme.spacing(4)})`,
       transition: theme.transitions.create("width"),
+      height: "20px",
       width: "100%",
       [theme.breakpoints.up("sm")]: {
         width: "12ch",
@@ -83,7 +84,7 @@ function Navbar(props) {
 
   const drawer = (
     <Box sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
+      <Typography variant="h6" sx={{}}>
         News Portal
       </Typography>
       <Divider />
@@ -142,7 +143,7 @@ function Navbar(props) {
           color: "white",
         }}
       >
-        <Toolbar sx={{ margin: "10px 20px 0px 20px" }}>
+        <Toolbar className="navbar">
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -160,7 +161,7 @@ function Navbar(props) {
           <Box
             sx={{
               flexGrow: 1,
-              display: { xs: "block", sm: "block", md: "block" },
+              display: { xs: "none", sm: "block", md: "block" },
             }}
           >
             <Grid container direction="row" spacing={0}>
@@ -204,33 +205,42 @@ function Navbar(props) {
             </Grid>
           </Box>
 
-          <Box
-            sx={{
-              display: { xs: "none", sm: "none", md: "block" },
-            }}
-          >
-            <Grid container direction="row" spacing={2}>
+          <Box>
+            <Grid container direction="row" spacing={0}>
               <Grid item>
-                <Search>
-                  <SearchIconWrapper>
-                    <SearchIcon />
-                  </SearchIconWrapper>
-                  <StyledInputBase
-                    placeholder="Search…"
-                    inputProps={{ "aria-label": "search" }}
-                  />
-                </Search>
-              </Grid>
-              <Grid item>
-                <Button
-                  variant="contained"
+                <Box
                   sx={{
-                    background: "black",
-                    "&:hover": { background: "#444444" },
+                    display: { xs: "block", sm: "block", md: "block" },
                   }}
                 >
-                  Masuk
-                </Button>
+                  <Search sx={{ height: "36px" }}>
+                    <SearchIconWrapper>
+                      <SearchIcon />
+                    </SearchIconWrapper>
+                    <StyledInputBase
+                      placeholder="Search…"
+                      inputProps={{ "aria-label": "search" }}
+                    />
+                  </Search>
+                </Box>
+              </Grid>
+              <Grid item>
+                <Box
+                  sx={{
+                    display: { xs: "none", sm: "none", md: "block" },
+                  }}
+                >
+                  <Button
+                    variant="contained"
+                    sx={{
+                      background: "black",
+                      marginLeft: "20px",
+                      "&:hover": { background: "#444444" },
+                    }}
+                  >
+                    Masuk
+                  </Button>
+                </Box>
               </Grid>
             </Grid>
           </Box>
