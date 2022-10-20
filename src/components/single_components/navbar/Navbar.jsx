@@ -84,16 +84,20 @@ function Navbar(props) {
 
   const drawer = (
     <Box sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{}}>
+      <Typography variant="h6" sx={{ margin: "20px 0px" }}>
         News Portal
       </Typography>
       <Divider />
       <List>
         <ListItem disablePadding>
-          <ListItemButton sx={{}}>
+          <ListItemButton>
             <ListItemText>
               <NavLink to="/">
-                <Typography variant="subtitle1" onClick={handleDrawerToggle}>
+                <Typography
+                  variant="subtitle1"
+                  onClick={handleDrawerToggle}
+                  sx={{ color: "black" }}
+                >
                   Home
                 </Typography>
               </NavLink>
@@ -111,9 +115,9 @@ function Navbar(props) {
                     borderRadius: "20px",
                     textTransform: "capitalize",
                     fontWeight: "bold",
-                    background: "#ff5800",
+                    background: "black",
                     "&:hover": {
-                      background: "red",
+                      background: "#121221",
                     },
                   }}
                   onClick={handleDrawerToggle}

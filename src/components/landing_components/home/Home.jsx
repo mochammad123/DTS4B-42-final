@@ -10,7 +10,7 @@ import Footer from "../../single_components/footer/Footer";
 const Home = () => {
   return (
     <>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ minHeight: "100%" }}>
         <Box sx={{ display: "flex", marginTop: "100px" }}>
           <Box
             sx={{
