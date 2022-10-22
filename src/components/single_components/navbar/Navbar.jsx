@@ -171,40 +171,36 @@ function Navbar(props) {
             <Grid container direction="row" spacing={0}>
               <Grid item>
                 <NavLink to="/">
-                  <NavLink to="/">
-                    {" "}
-                    <h1
-                      style={{
-                        fontStyle: "normal",
-                        fontWeight: 700,
-                        fontSize: "16px",
-                        background: "#121221",
-                        padding: "8px",
-                        borderRadius: "4px",
-                        color: "#F8F8F8",
-                      }}
-                    >
-                      News
-                    </h1>
-                  </NavLink>
+                  {" "}
+                  <h1
+                    style={{
+                      fontStyle: "normal",
+                      fontWeight: 700,
+                      fontSize: "16px",
+                      background: "#121221",
+                      padding: "8px",
+                      borderRadius: "4px",
+                      color: "#F8F8F8",
+                    }}
+                  >
+                    News
+                  </h1>
                 </NavLink>{" "}
               </Grid>
               <Grid item>
                 <NavLink to="/">
-                  <NavLink to="/">
-                    <h1
-                      style={{
-                        fontStyle: "normal",
-                        fontWeight: 700,
-                        fontSize: "16px",
-                        padding: "8px",
-                        color: "#121221",
-                      }}
-                    >
-                      Portal
-                    </h1>
-                  </NavLink>
-                </NavLink>{" "}
+                  <h1
+                    style={{
+                      fontStyle: "normal",
+                      fontWeight: 700,
+                      fontSize: "16px",
+                      padding: "8px",
+                      color: "#121221",
+                    }}
+                  >
+                    Portal
+                  </h1>
+                </NavLink>
               </Grid>
             </Grid>
           </Box>
@@ -234,16 +230,18 @@ function Navbar(props) {
                     display: { xs: "none", sm: "none", md: "block" },
                   }}
                 >
-                  <Button
-                    variant="contained"
-                    sx={{
-                      background: "black",
-                      marginLeft: "20px",
-                      "&:hover": { background: "#444444" },
-                    }}
-                  >
-                    Masuk
-                  </Button>
+                  <NavLink to="/details">
+                    <Button
+                      variant="contained"
+                      sx={{
+                        background: "black",
+                        marginLeft: "20px",
+                        "&:hover": { background: "#444444" },
+                      }}
+                    >
+                      Masuk
+                    </Button>
+                  </NavLink>
                 </Box>
               </Grid>
             </Grid>

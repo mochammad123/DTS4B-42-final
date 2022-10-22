@@ -1,27 +1,64 @@
 import React from "react";
-import { Box, Card, CardContent, CardMedia, Grid } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  CardMedia,
+  Grid,
+  Skeleton,
+} from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { useGetSearchNewsQuery } from "../../../services/newsApi";
+import timesConverter from "../../../utils/timesConverter";
+import imageNotFound from "../../../assets/images/img.jpeg";
 
 const NewsHeader = () => {
+  const navigate = useNavigate();
+  const { data } = useGetSearchNewsQuery({
+    keyword: "top stories",
+    single: true,
+  });
+
+  const hotTopicsData = data && data.value[0];
+  const image = hotTopicsData && hotTopicsData.image.thumbnail.contentUrl;
+  const title = hotTopicsData && hotTopicsData.name;
+  const date = hotTopicsData && hotTopicsData.datePublished;
+  const description = hotTopicsData && hotTopicsData.description;
+  const publisher = hotTopicsData && hotTopicsData.provider[0].name;
+
+  const handleClick = () => {
+    navigate(`/${title}`);
+  };
+
   return (
     <>
-      <Card variant="contained" sx={{ borderRadius: "8px" }}>
+      <Card
+        variant="contained"
+        sx={{ borderRadius: "8px", cursor: "pointer" }}
+        onClick={handleClick}
+      >
         <Grid container direction="row" spacing={0}>
           <Grid item xs={12} md={9}>
             <CardMedia
               component="img"
               className="card_media"
-              image="http://placekitten.com/500"
-              alt="Image"
+              image={image || imageNotFound}
+              alt={title}
               aria-label="Test"
             />
-            <h1 className="header_title">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            </h1>
+            {title ? (
+              <h1 className="header_title" sx={{ minHeight: "100%" }}>
+                {title}
+              </h1>
+            ) : (
+              <Skeleton />
+            )}
+
             <Box
               sx={{
                 display: "flex",
                 position: "absolute",
-                marginTop: "-70px",
+                marginTop: "-40px",
               }}
             >
               <Box
@@ -31,10 +68,14 @@ const NewsHeader = () => {
               >
                 <Grid container direction="row" spacing={0}>
                   <Grid item>
-                    <p className="news_title">1 Hours Ago</p>
+                    <p className="news_title">
+                      {date ? timesConverter(date) : `We can't found`}
+                    </p>
                   </Grid>
                   <Grid item>
-                    <p className="news_title">CNN Indonesia</p>
+                    <p className="news_title">
+                      {publisher ? publisher : `We can't found`}
+                    </p>
                   </Grid>
                 </Grid>
               </Box>
@@ -48,30 +89,20 @@ const NewsHeader = () => {
                 display: { xs: "none", md: "block" },
               }}
             >
-              <p
-                style={{
-                  fontWeight: 400,
-                  fontSize: "18px",
-                  lineHeight: "33px",
-                  color: "#444444",
-                }}
-              >
-                Nisi, sagittis aliquet sit rutrum. Nunc, id vestibulum quam
-                ornare adipiscing. Pellentesque sed turpis nunc gravida
-                pharetra, sit nec vivamus pharetra. Velit, dui, egestas nisi,
-                elementum mattis mauris, magnis. Massa tortor nibh nulla
-                condimentum imperdiet scelerisque...{" "}
-                <span
+              {description ? (
+                <p
                   style={{
-                    fontWeight: "bold",
+                    fontWeight: 400,
                     fontSize: "18px",
                     lineHeight: "33px",
-                    color: "black",
+                    color: "#444444",
                   }}
                 >
-                  read more
-                </span>
-              </p>
+                  {description}
+                </p>
+              ) : (
+                <Skeleton />
+              )}
             </CardContent>
           </Grid>
         </Grid>

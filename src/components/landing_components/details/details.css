@@ -56,6 +56,16 @@
     color: #121221;
 }
 
+.card_content_detail {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    margin-top: 44px;
+    color: #444444;
+}
+
+
 .card_action {
     font-family: "roboto";
     font-style: normal;
@@ -63,6 +73,25 @@
     font-size: 12px;
     line-height: 14px;
     color: #949494;
+}
+
+.card_action_detail {
+    font-family: "roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 11px;
+    color: #444444;
+}
+
+.card_description_detail {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 180%;
+    margin-top: 44px;
+    color: #444444;
 }
 
 .navbar {
@@ -75,13 +104,6 @@
     background: #F8F8F8;
     margin-top: 40px;
 }
-
-@media only screen and (min-width: 1370px) {
-    .navbar {
-        margin: 10px 60px 0px 60px;
-    }
-}
-
 
 @media only screen and (max-width: 1300px) {
     .navbar {
@@ -99,7 +121,6 @@
     .header_title {
     top: 420px;
     font-size: 24px;
-    width: 500px;
     }
 
     .card_content {
@@ -126,7 +147,7 @@
 
     .news_title {
         font-size: 8px;
-        margin: 20px 0px 0px 30px;
+        margin: 40px 0px 0px 30px;
     }
 
     .card_content {
@@ -148,13 +169,13 @@
 
 @media only screen and (max-width:440px) {
     .header_title {
-        top: 270px;
+        top: 300px;
         font-size: 16px;
-        width: 200px;
+        width: 250px;
     }
 
     .news_title {
         font-size: 8px;
-        margin: 20px 0px 0px 27px;
+        margin: 40px 0px 0px 27px;
     }
 }

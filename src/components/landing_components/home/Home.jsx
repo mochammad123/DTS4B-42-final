@@ -2,12 +2,13 @@ import React from "react";
 import "./home.css";
 import Navbar from "../../single_components/navbar/Navbar";
 import NewsHeader from "../../single_components/news_header/NewsHeader";
-import { Box, Container, Grid } from "@mui/material";
-import CardNews from "../../single_components/card/CardNews";
-import datas from "../../data/news.json";
+import { Box, Container } from "@mui/material";
 import Footer from "../../single_components/footer/Footer";
+import { useGetLastestNewsQuery } from "../../../services/newsApi";
+import CardNewsList from "../../single_components/card/CardNewsList";
 
 const Home = () => {
+  const { data } = useGetLastestNewsQuery();
   return (
     <>
       <Container maxWidth="lg" sx={{ minHeight: "100%" }}>
@@ -28,13 +29,7 @@ const Home = () => {
             >
               Latest News
             </h1>
-            <Grid container direction="row" spacing={1}>
-              {datas.map((data, index) => (
-                <Grid item xs={6} sm={4} md={3}>
-                  <CardNews key={index} data={data} />
-                </Grid>
-              ))}
-            </Grid>
+            {data && <CardNewsList data={data.value} />}
           </Box>
         </Box>
       </Container>
