@@ -34,7 +34,7 @@ export const newsApi = createApi({
       query: () => ({
         url: "/",
         params: {
-          count: "8",
+          count: "12",
           category: "Sports",
           mkt: "en-US",
           safeSearch: "Off",
