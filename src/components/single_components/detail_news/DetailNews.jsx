@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Card, CardMedia, Grid } from "@mui/material";
 import { useParams } from "react-router-dom";
 import { useGetSearchNewsQuery } from "../../../services/newsApi";
-import imageNotFound from "../../../assets/images/img.jpeg";
+import imageNotFound from "../../../assets/images/images.jpg";
 import timesConverter from "../../../utils/timesConverter";
 
 const DetailNews = () => {

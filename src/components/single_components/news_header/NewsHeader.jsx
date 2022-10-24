@@ -10,7 +10,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useGetSearchNewsQuery } from "../../../services/newsApi";
 import timesConverter from "../../../utils/timesConverter";
-import imageNotFound from "../../../assets/images/img.jpeg";
+import imageNotFound from "../../../assets/images/images.jpg";
 
 const NewsHeader = () => {
   const navigate = useNavigate();

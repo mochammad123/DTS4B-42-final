@@ -18,7 +18,7 @@ export const newsApi = createApi({
       query: () => ({
         url: "trendingtopics",
         params: {
-          mkt: "en-US",
+          mkt: "en-GB",
           textFormat: "Raw",
           safeSearch: "Off",
           count: "1",
@@ -31,12 +31,12 @@ export const newsApi = createApi({
       },
     }),
     getLastestNews: builder.query({
-      query: () => ({
+      query: ({ category }) => ({
         url: "/",
         params: {
           count: "12",
-          category: "Sports",
-          mkt: "en-US",
+          category: category,
+          mkt: "en-GB",
           safeSearch: "Off",
           textFormat: "Raw",
         },

@@ -6,7 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import { Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import timesConverter from "../../../utils/timesConverter";
-import imageNotFound from "../../../assets/images/img.jpeg";
+import imageNotFound from "../../../assets/images/images.jpg";
 
 const CardNewsItem = (props) => {
   const navigate = useNavigate();
