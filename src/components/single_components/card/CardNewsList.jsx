@@ -7,7 +7,7 @@ const CardNewsList = (props) => {
     <>
       <Grid container direction="row" spacing={1}>
         {props.data.map((item, index) => (
-          <Grid item xs={6} sm={4} md={3}>
+          <Grid item xs={6} sm={4} md={4}>
             <CardNewsItem
               key={index}
               image={item.image && item.image.thumbnail.contentUrl}

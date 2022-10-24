@@ -11,9 +11,31 @@ import {
 } from "@mui/material";
 import LoginIcon from "@mui/icons-material/Login";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [checked, setChecked] = React.useState(true);
+  const navigate = useNavigate();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      Swal.fire({
+        icon: "success",
+        title: "Yeah",
+        text: "Login Success",
+      }).then(function () {
+        navigate("/");
+      });
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Error Login",
+      });
+    }
+  };
 
   const handleChange = (event) => {
     setChecked(event.target.checked);
@@ -29,7 +51,13 @@ const Login = () => {
   return (
     <div>
       <Container maxWidth="xs" sx={{ minHeight: "100%" }}>
-        <Paper elevation={10} style={paperStyle}>
+        <Paper
+          component="form"
+          noValidate
+          onSubmit={handleSubmit}
+          elevation={10}
+          style={paperStyle}
+        >
           <Grid align="center" style={{ margin: "20px auto" }}>
             <Avatar style={AvatarStyle}>
               <LoginIcon />
@@ -45,18 +73,22 @@ const Login = () => {
           >
             <Grid item xs={12}>
               <TextField
-                label="Username"
+                id="email"
+                name="email"
+                label="Email"
                 fullWidth
-                placeholder="Enter Username"
-              ></TextField>
+                placeholder="Enter Email"
+              />
             </Grid>
             <Grid item xs={12}>
               <TextField
+                id="password"
+                name="password"
                 label="Password"
                 fullWidth
                 placeholder="Enter Password"
                 type={"password"}
-              ></TextField>
+              />
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
@@ -72,7 +104,12 @@ const Login = () => {
               />
             </Grid>
             <Grid item xs={12}>
-              <Button style={{ margin: "8px 0" }} fullWidth variant="contained">
+              <Button
+                type="submit"
+                style={{ margin: "8px 0" }}
+                fullWidth
+                variant="contained"
+              >
                 Login
               </Button>
               <Typography>

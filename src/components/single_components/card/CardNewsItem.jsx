@@ -10,7 +10,7 @@ import imageNotFound from "../../../assets/images/images.jpg";
 
 const CardNewsItem = (props) => {
   const navigate = useNavigate();
-  const { image, title, date, published } = props;
+  const { image, title, date, published, category } = props;
 
   const handleClick = () => {
     navigate(`/${title}`);
@@ -43,6 +43,7 @@ const CardNewsItem = (props) => {
             </Grid>
             <Grid item>
               <p className="card_action">{published}</p>
+              <p className="card_action">{category}</p>
             </Grid>
           </Grid>
         </CardActions>

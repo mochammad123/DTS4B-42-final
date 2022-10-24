@@ -14,11 +14,12 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { NavLink } from "react-router-dom";
+import { NavLink, useSearchParams } from "react-router-dom";
 import { Grid } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
+import { useDispatch } from "react-redux";
 
 const drawerWidth = 240;
 
@@ -26,6 +27,13 @@ function Navbar(props) {
   const { win } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [y, setY] = useState(window.scrollY);
+  const [term, setTerm] = useState("");
+  const dispatch = useDispatch();
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    console.log(term);
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", () => setY(window.scrollY));
@@ -213,15 +221,19 @@ function Navbar(props) {
                     display: { xs: "block", sm: "block", md: "block" },
                   }}
                 >
-                  <Search sx={{ height: "36px" }}>
-                    <SearchIconWrapper>
-                      <SearchIcon />
-                    </SearchIconWrapper>
-                    <StyledInputBase
-                      placeholder="Search…"
-                      inputProps={{ "aria-label": "search" }}
-                    />
-                  </Search>
+                  <form onSubmit={submitHandler}>
+                    <Search sx={{ height: "36px" }}>
+                      <SearchIconWrapper>
+                        <SearchIcon />
+                      </SearchIconWrapper>
+                      <StyledInputBase
+                        placeholder="Search…"
+                        inputProps={{ "aria-label": "search" }}
+                        value={term}
+                        onChange={(e) => setTerm(e.target.value)}
+                      />
+                    </Search>
+                  </form>
                 </Box>
               </Grid>
               <Grid item>
@@ -230,7 +242,7 @@ function Navbar(props) {
                     display: { xs: "none", sm: "none", md: "block" },
                   }}
                 >
-                  <NavLink to="/details">
+                  <NavLink to="/login">
                     <Button
                       variant="contained"
                       sx={{
