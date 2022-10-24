@@ -3,7 +3,7 @@ import "./details.css";
 import Navbar from "../../single_components/navbar/Navbar";
 import NewsHeader from "../../single_components/news_header/NewsHeader";
 import { Box, Container, Grid } from "@mui/material";
-import CardNews from "../../single_components/card/CardNews";
+// import CardNews from "../../single_components/card/CardNews";
 import DetailNews from "../../single_components/detailNews/DetailNews";
 
 import datas from "../../data/news.json";

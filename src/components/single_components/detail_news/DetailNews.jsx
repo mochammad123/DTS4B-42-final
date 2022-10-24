@@ -10,8 +10,9 @@ const DetailNews = () => {
   const id = params.idNews;
 
   const { data } = useGetSearchNewsQuery({ keyword: id, single: true });
-
+  
   const newsData = data && data.value[0];
+  console.log(newsData)
   const image = newsData?.image && newsData.image.thumbnail.contentUrl;
   const title = newsData && newsData.name;
   const date = newsData && newsData.datePublished;
