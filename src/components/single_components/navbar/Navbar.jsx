@@ -20,6 +20,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
 import { useDispatch } from "react-redux";
+import UserLog from "./UserLog";
 
 const drawerWidth = 240;
 
@@ -242,18 +243,7 @@ function Navbar(props) {
                     display: { xs: "none", sm: "none", md: "block" },
                   }}
                 >
-                  <NavLink to="/login">
-                    <Button
-                      variant="contained"
-                      sx={{
-                        background: "black",
-                        marginLeft: "20px",
-                        "&:hover": { background: "#444444" },
-                      }}
-                    >
-                      Masuk
-                    </Button>
-                  </NavLink>
+                  <UserLog />
                 </Box>
               </Grid>
             </Grid>

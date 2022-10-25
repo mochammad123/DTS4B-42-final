@@ -13,14 +13,20 @@ import LoginIcon from "@mui/icons-material/Login";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../../config/firebase";
 
 const Login = () => {
   const [checked, setChecked] = React.useState(true);
   const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const email = data.get("email");
+    const password = data.get("password");
 
     try {
+      await signInWithEmailAndPassword(auth, email, password);
       Swal.fire({
         icon: "success",
         title: "Yeah",
