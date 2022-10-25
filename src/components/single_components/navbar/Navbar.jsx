@@ -14,13 +14,12 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { NavLink, useSearchParams } from "react-router-dom";
-import { Grid } from "@mui/material";
+import { NavLink } from "react-router-dom";
+import { Grid, Paper } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
-import { useDispatch } from "react-redux";
 import UserLog from "./UserLog";
+import { useGetSearchNewsQuery } from "../../../services/newsApi";
 
 const drawerWidth = 240;
 
@@ -29,12 +28,17 @@ function Navbar(props) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [y, setY] = useState(window.scrollY);
   const [term, setTerm] = useState("");
-  const dispatch = useDispatch();
 
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(term);
+    console.log(data);
   };
+
+  const { data } = useGetSearchNewsQuery({
+    keyword: term,
+    single: true,
+  });
 
   useEffect(() => {
     window.addEventListener("scroll", () => setY(window.scrollY));
@@ -42,50 +46,6 @@ function Navbar(props) {
       window.removeEventListener("scroll", () => setY(window.scrollY));
     };
   }, [y]);
-
-  const Search = styled("div")(({ theme }) => ({
-    position: "relative",
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.black, 1),
-    "&:hover": {
-      backgroundColor: alpha(theme.palette.common.black, 0.75),
-    },
-    marginLeft: 0,
-    height: "95%",
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing(1),
-      width: "auto",
-    },
-  }));
-
-  const SearchIconWrapper = styled("div")(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: "100%",
-    position: "absolute",
-    pointerEvents: "none",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  }));
-
-  const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: "inherit",
-    "& .MuiInputBase-input": {
-      padding: theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-      transition: theme.transitions.create("width"),
-      height: "20px",
-      width: "100%",
-      [theme.breakpoints.up("sm")]: {
-        width: "12ch",
-        "&:focus": {
-          width: "20ch",
-        },
-      },
-    },
-  }));
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -223,17 +183,25 @@ function Navbar(props) {
                   }}
                 >
                   <form onSubmit={submitHandler}>
-                    <Search sx={{ height: "36px" }}>
-                      <SearchIconWrapper>
+                    <Paper
+                      elevation={3}
+                      sx={{ background: "black", height: "37px" }}
+                    >
+                      <IconButton
+                        type="button"
+                        sx={{ color: "white" }}
+                        aria-label="search"
+                      >
                         <SearchIcon />
-                      </SearchIconWrapper>
-                      <StyledInputBase
-                        placeholder="Search…"
-                        inputProps={{ "aria-label": "search" }}
-                        value={term}
+                      </IconButton>
+                      <InputBase
+                        sx={{ ml: 1, flex: 1, color: "white" }}
+                        size="small"
+                        placeholder="Search ..."
+                        inputProps={{ "aria-label": "Search ..." }}
                         onChange={(e) => setTerm(e.target.value)}
                       />
-                    </Search>
+                    </Paper>
                   </form>
                 </Box>
               </Grid>

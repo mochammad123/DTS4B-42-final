@@ -15,7 +15,7 @@ import imageNotFound from "../../../assets/images/images.jpg";
 const NewsHeader = () => {
   const navigate = useNavigate();
   const { data } = useGetSearchNewsQuery({
-    keyword: "top stories",
+    keyword: "big news",
     single: true,
   });
 

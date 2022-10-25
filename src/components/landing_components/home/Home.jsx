@@ -33,6 +33,7 @@ const Home = () => {
             >
               Latest News
             </h1>
+
             <Grid container direction="row" spacing={2}>
               <Grid item xs={12} sm={12} md={2}>
                 <h1 className="news_header" style={{ fontSize: "24px" }}>

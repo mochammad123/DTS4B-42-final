@@ -14,22 +14,6 @@ export const newsApi = createApi({
     },
   }),
   endpoints: (builder) => ({
-    getTopNews: builder.query({
-      query: () => ({
-        url: "trendingtopics",
-        params: {
-          mkt: "en-GB",
-          textFormat: "Raw",
-          safeSearch: "Off",
-          count: "1",
-        },
-      }),
-      transformResponse: (response) => {
-        return response.value
-          ? { keyword: response.value[0].name }
-          : { error: response.message };
-      },
-    }),
     getLastestNews: builder.query({
       query: ({ category }) => ({
         url: "/",
