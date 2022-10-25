@@ -36,7 +36,7 @@ function App() {
               </PrivateComponent>
             }
           />
-          <Route path="/*" exact={true} element={<NotFound />} />
+          <Route path="*" exact={true} element={<NotFound />} />
         </Routes>
       </Router>
     </div>
