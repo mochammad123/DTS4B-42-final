@@ -1,0 +1,15 @@
+.menu {
+    cursor: pointer;
+    color: rgb(255, 0, 0) !important;
+    text-decoration: none;
+}
+.menu:hover {
+    color: #ffffff;
+	font-weight: bold;
+    cursor: pointer;
+}
+
+.is-active {
+	color: #ffffff!important;
+	font-weight: bold;
+}
