@@ -32,6 +32,11 @@
     line-height: 150%;
     color: #F8F8F8;
     transform: translateX(10%);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .news_title {
@@ -46,6 +51,14 @@
     margin-bottom: 20px;
     color: #F8F8F8;
     margin: 0px 0px 0px 55px;
+}
+
+.news_header_description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .card_content {

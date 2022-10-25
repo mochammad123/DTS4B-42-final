@@ -83,6 +83,7 @@ const NewsHeader = () => {
           </Grid>
           <Grid item xs={12} md={3}>
             <CardContent
+              className={"news_header_description"}
               sx={{
                 flex: "1 0 auto",
                 marginLeft: "10px",
