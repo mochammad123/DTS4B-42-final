@@ -19,12 +19,12 @@ const NewsHeader = () => {
     single: true,
   });
 
-  const hotTopicsData = data && data.value[0];
-  const image = hotTopicsData && hotTopicsData.image.thumbnail.contentUrl;
-  const title = hotTopicsData && hotTopicsData.name;
-  const date = hotTopicsData && hotTopicsData.datePublished;
-  const description = hotTopicsData && hotTopicsData.description;
-  const publisher = hotTopicsData && hotTopicsData.provider[0].name;
+  const hotTopicsData = data && data?.value[0];
+  const image = hotTopicsData && hotTopicsData?.image?.thumbnail?.contentUrl;
+  const title = hotTopicsData && hotTopicsData?.name;
+  const date = hotTopicsData && hotTopicsData?.datePublished;
+  const description = hotTopicsData && hotTopicsData?.description;
+  const publisher = hotTopicsData && hotTopicsData?.provider[0]?.name;
 
   const handleClick = () => {
     navigate(`/${title}`);

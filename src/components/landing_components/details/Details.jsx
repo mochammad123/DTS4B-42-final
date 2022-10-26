@@ -6,12 +6,7 @@ import { Box, Container } from "@mui/material";
 import datas from "../../data/news.json";
 import Footer from "../../single_components/footer/Footer";
 import DetailNews from "../../single_components/detail_news/DetailNews";
-// import { Link } from "react-router-dom";
 const Details = () => {
-  // var a = datas.map((data,index)=> {
-  //   console.log(data)
-  //   console.log(datas[1].title)
-  // })
   return (
     <>
       <Container maxWidth="lg" sx={{ minHeight: "100%" }}>
@@ -25,9 +20,6 @@ const Details = () => {
           >
             <Navbar />
             <h1 className="news_header">Detail Topics</h1>
-            {/* {datas.map((data, index) => (
-              <DetailNews key={index} data={data} result={datas}/>
-            ))} */}
             <DetailNews sx={{ margin: "0px" }} result={datas} />
           </Box>
         </Box>

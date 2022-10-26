@@ -15,4 +15,5 @@ API yang digunakan yaitu dari [Rapid API](https://rapidapi.com/) dan menggunakan
 Aplikasi ini dapat menampilkan Hot Topics, Latest News, Detail Topics, Login, Register dan Logout. Selain itu juga ada Fitur Unik yang terapkan yaitu :
 Fitur Unik : Melakukan filter berdasarkan category dan search berdasarkan title (masih belum selesai)
 
-Ketentuan lengkap bisa dilihat di [Final Project Guidelines](https://docs.google.com/document/d/122KyWNQ4xxU4aFwWbM4vIfH7LM4AH2CZEZa3YsEHjCk). 
+
+### ARIGATOU 

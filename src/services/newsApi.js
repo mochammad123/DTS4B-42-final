@@ -6,7 +6,7 @@ export const newsApi = createApi({
   reducerPath: "newsApi",
   baseQuery: fetchBaseQuery({
     baseUrl: "https://bing-news-search1.p.rapidapi.com/news/",
-    prepareHeaders: (headers, { getState }) => {
+    prepareHeaders: (headers) => {
       headers.set("X-BingApis-SDK", "true");
       headers.set("X-RapidAPI-Key", API_TOKEN);
       headers.set("X-RapidAPI-Host", "bing-news-search1.p.rapidapi.com");
@@ -18,8 +18,8 @@ export const newsApi = createApi({
       query: ({ category }) => ({
         url: "/",
         params: {
-          count: "12",
           category: category,
+          count: "12",
           mkt: "en-GB",
           safeSearch: "Off",
           textFormat: "Raw",
@@ -41,8 +41,4 @@ export const newsApi = createApi({
   }),
 });
 
-export const {
-  useGetTopNewsQuery,
-  useGetLastestNewsQuery,
-  useGetSearchNewsQuery,
-} = newsApi;
+export const { useGetLastestNewsQuery, useGetSearchNewsQuery } = newsApi;

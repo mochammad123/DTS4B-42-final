@@ -7,7 +7,7 @@ import timesConverter from "../../../utils/timesConverter";
 
 const DetailNews = () => {
   const params = useParams();
-  const id = params.idNews;
+  const id = params.idDetailNews;
 
   const { data } = useGetSearchNewsQuery({ keyword: id, single: true });
 

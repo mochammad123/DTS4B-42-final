@@ -3,17 +3,7 @@ import React, { useState } from "react";
 import ListItemNews from "./CategoryNewsItem";
 import { Collapse, List, ListItemButton, ListItemText } from "@mui/material";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
-
-const categories = [
-  ["Business", "Business"],
-  ["Entertainment", "Entertainment"],
-  ["Health", "Health"],
-  ["Politics", "Politics"],
-  ["ScienceAndTechnology", "Science and Technology"],
-  ["Sports", "Sports"],
-  ["UK", "UK"],
-  ["World", "World"],
-];
+import categories from "../category/categories";
 
 const CategoryNewsList = () => {
   const [open, setOpen] = useState(false);

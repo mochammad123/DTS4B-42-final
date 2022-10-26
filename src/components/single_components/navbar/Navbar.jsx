@@ -13,13 +13,13 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import { NavLink } from "react-router-dom";
 import { Grid, Paper } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import UserLog from "./UserLog";
 import { useGetSearchNewsQuery } from "../../../services/newsApi";
+import UserLogMobile from "./UserLogMobile";
 
 const drawerWidth = 240;
 
@@ -73,30 +73,7 @@ function Navbar(props) {
             </ListItemText>
           </ListItemButton>
         </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton sx={{ textAlign: "center" }}>
-            <ListItemText>
-              <NavLink to="/login">
-                <Button
-                  variant="contained"
-                  fullWidth
-                  sx={{
-                    borderRadius: "20px",
-                    textTransform: "capitalize",
-                    fontWeight: "bold",
-                    background: "black",
-                    "&:hover": {
-                      background: "#121221",
-                    },
-                  }}
-                  onClick={handleDrawerToggle}
-                >
-                  Masuk
-                </Button>
-              </NavLink>
-            </ListItemText>
-          </ListItemButton>
-        </ListItem>
+        <UserLogMobile />
       </List>
     </Box>
   );
