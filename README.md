@@ -1,19 +1,18 @@
 # DTS REA4 Final Project
 
+DTS4B-42-final
+
+## Video Dokumentasi
+![](https://github.com/mochammad123/DTS4B-42-final/blob/main/Done.gif)
+## Link live app
+[Link live app](https://dts4b-42-final.netlify.app/)
+
+## Daftar Fitur & Api
+Dalam project ini membuat aplikasi News Portal (Portal Berita) yang men-generate data dari API.
+
+API yang digunakan yaitu dari [Rapid API](https://rapidapi.com/) dan menggunakan [Bing News Search](https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/bing-news-search1/) yang telah menyediakan fitur Get News Category, Get News Search dan Get News Trending.
+
+Aplikasi ini dapat menampilkan Hot Topics, Latest News, Detail Topics, Login, Register dan Logout. Selain itu juga ada Fitur Unik yang terapkan yaitu :
+Fitur Unik : Melakukan filter berdasarkan category dan search berdasarkan title (masih belum selesai)
+
 Ketentuan lengkap bisa dilihat di [Final Project Guidelines](https://docs.google.com/document/d/122KyWNQ4xxU4aFwWbM4vIfH7LM4AH2CZEZa3YsEHjCk). 
-
-## Daftar pair
-
-Tugas dikerjakan secara berpasangan, untuk daftar kelompok bisa dilihat pada masing-masing Classroom atau Discord Class.
-
-## Fork and Clone
-
-Mohon perwakilan dari pair bisa melakukan fork repo ini dan clone, untuk repositori yang di fork menggunakan penamaan:
-
-`dts4[a/b/c]-[nomor pair]-final`
-
-Contoh: `dts4a-01-final`
-
-## Branching, commit
-
-Branch dapat sesuai dengan kebutuhan dan kesepakatan bersama dalam pair, namun hasil akhirnya harus di merge ke branch `main` dan di push ke Github. Pastikan hasil akhir kode sudah ter-push!
